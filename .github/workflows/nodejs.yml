@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   push:	
@@ -6,8 +6,7 @@ on:
       - master
 
 jobs:
-  deploy:
-    name: Deploy to GitHub Pages
+  build-and-deploy:
     runs-on: ubuntu-latest    
     steps:
     - uses: actions/checkout@master
@@ -21,9 +20,8 @@ jobs:
         npm run build
 
     - name: Deploy
-      uses: s0/git-publish-subdir-action@master
+      uses: JamesIves/github-pages-deploy-action@releases/v3
       env:
-        REPO: git@github.com:silvester-pari/wann.git
         BRANCH: gh-pages
         FOLDER: dist
-        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
