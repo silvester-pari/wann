@@ -11,6 +11,9 @@ Router.prototype.replace = function replace(location) {
 Vue.use(Router);
 
 const router = new Router({
+  base: process.env.NODE_ENV === 'production'
+  ? '/wann/'
+  : '/',
   mode: 'history',
   scrollBehavior(to, from, savedPosition) {
     // eslint-disable-next-line no-undef
