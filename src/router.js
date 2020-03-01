@@ -29,7 +29,7 @@ const router = new Router({
     {
       path: '/',
       name: 'landingpage',
-      component: () => import(/* webpackChunkName: "marketplace-branded" */ './views/Index.vue'),
+      component: () => import(/* webpackChunkName: "index" */ './views/Index.vue'),
       meta: {
         requiresAuth: false,
         title: 'Index',
