@@ -1,5 +1,25 @@
 <template>
   <v-container>
+    <h2 class="font-weight-light">Favorites</h2>
+    <template v-if="!$store.state.stops.stops.length > 0">
+      <div
+        v-for="n in 3"
+        :key="n"
+        class="mb-5"
+      >
+        <v-skeleton-loader
+          type="list-item-avatar"
+          style="transform: scale(0.5); transform-origin: left;"
+          width="200px"
+          tile
+        />
+        <v-skeleton-loader
+          type="list-item-avatar-two-line"
+          class="elevation-3 py-3"
+          tile
+        />
+      </div>
+    </template>
     <template
         v-for="stop in $store.state.stops.stops"
     >
