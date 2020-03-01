@@ -9,7 +9,8 @@ import vuetify from './plugins/vuetify';
 Vue.config.productionTip = false
 
 const axiosInstance = axios.create({
-  baseURL: 'https://www.wienerlinien.at/ogd_realtime',
+  baseURL: 'https://wo4120ke19.execute-api.eu-central-1.amazonaws.com/dev/?url=https://www.wienerlinien.at/ogd_realtime',
+  // baseURL: 'https://www.wienerlinien.at/ogd_realtime',
 })
 
 Vue.prototype.$axios = axiosInstance
