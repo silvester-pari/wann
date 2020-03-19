@@ -1,7 +1,8 @@
 const state = {
   favorites: [
     1302,
-    4621
+    4621,
+    1432
   ],
 }
 
